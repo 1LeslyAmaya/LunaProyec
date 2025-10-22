@@ -2,11 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Streaming</title>
+    <title>Bienvenidos a Luna</title>
 </head>
 <body>
-    <h1> Bienvenido a Luna</h1>
-    <p>Tu plataforma de streaming personalizada.</p>
+    <h1> Bienvenidos a Luna</h1>
+    <p>Plataforma para visualizar contenido de entretenimiento.</p>
+
+    <a href="{{ url_for('auth.register') }}">Registrarse</a> |
+    <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>
 </body>
 </html>

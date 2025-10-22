@@ -1,0 +1,73 @@
+
+body {
+    background-color: #0a0a0f;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 400px;
+}
+
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+button {
+    background: linear-gradient(135deg, #00e0ff, #0077ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.flash.success { background: rgba(0, 255, 127, 0.2); }
+.flash.danger  { background: rgba(255, 0, 0, 0.3); }
+.flash.info    { background: rgba(0, 140, 255, 0.3); }
