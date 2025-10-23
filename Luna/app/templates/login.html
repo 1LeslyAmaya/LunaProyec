@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión - Luna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>Inicio de Sesión</h2>
-    <form method="POST">
-        <label>Correo electrónico:</label><br>
-        <input type="email" name="email" required><br>
+    <div class="container">
+        <h2>✨ Iniciar Sesión en Luna</h2>
 
-        <label>Contraseña:</label><br>
-        <input type="password" name="password" required><br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
 
-        <button type="submit">Ingresar</button>
-    </form>
-    <p>¿No tienes cuenta? <a href="{{ url_for('auth.register') }}">Regístrate aquí</a></p>
+        <form method="POST">
+            <input type="email" name="email" placeholder="Correo electrónico" required><br>
+            <input type="password" name="password" placeholder="Contraseña" required><br>
+            <label style="font-size: 0.9rem;">
+                <input type="checkbox" name="remember"> Recordarme
+            </label><br>
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <p>¿No tienes cuenta? <a href="{{ url_for('auth.register') }}">Regístrate</a></p>
+    </div>
 </body>
 </html>

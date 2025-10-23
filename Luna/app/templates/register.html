@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro - Luna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>Registro de Usuario</h2>
-    <form method="POST">
-        <label>Nombre de usuario:</label><br>
-        <input type="text" name="username" required><br>
-
-        <label>Correo electrónico:</label><br>
-        <input type="email" name="email" required><br>
-
-        <label>Contraseña:</label><br>
-        <input type="password" name="password" required><br>
-
-        <button type="submit">Registrarse</button>
-    </form>
-    <p>¿Ya tienes cuenta? <a href="{{ url_for('auth.login') }}">Inicia sesión</a></p>
+    <div class="container">
+        <h2> Crear Cuenta en Luna</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="username" placeholder="Nombre de usuario" required><br>
+            <input type="email" name="email" placeholder="Correo electrónico" required><br>
+            <input type="password" name="password" placeholder="Contraseña" required><br>
+            <button type="submit">Registrarse</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="{{ url_for('auth.login') }}">Inicia sesión</a></p>
+    </div>
 </body>
 </html>
